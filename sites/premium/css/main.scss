@@ -1,0 +1,622 @@
+// mixins
+@mixin flex(){
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+}
+
+@mixin btn(){
+	color: white;
+	background-color: #3cc395;
+	padding: 10px 8px;
+	border-radius: 3px;
+	font-size: 20px;
+	display: inline-block;
+	&:visited{
+		color: white;
+	}
+}
+// /mixins
+
+/*vars*/
+$opensans: 'Open Sans', sans-serif;
+$lobster: 'Lobster', cursive;
+$bebas: 'Bebas Neue', cursive;
+$colorBlue: #3cc3b5;
+/*/vars*/
+
+body{
+	font-family: $bebas;
+}
+
+.wrapper{
+	overflow: hidden;
+	position: relative;
+	z-index: 999;
+	@include flex;
+	flex-direction: column;
+}
+
+.ibg{
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	img{
+		display: none;
+	}
+}
+
+.container{
+	margin: 0 auto;
+	max-width: 1004px;
+	padding: 0 10px;
+}
+
+.container--small{
+	margin: 0 auto;
+	max-width: 862px;
+	padding: 0 10px;
+}
+
+.bg{
+	height: 904px;
+	width: 100%;
+	background-repeat: repeat;
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	left: 0;
+}
+
+/*header*/
+.header {
+	background-color: white;
+	&__container {
+		@include flex;
+		justify-content: space-between;
+		padding: 20px;
+		align-items: center;
+	}
+	&__logo {
+		font-size: 49px;
+		color: #3cc3b5;
+		font-family: $lobster;
+		&:hover, &:active, &:visited{
+			color: #3cc3b5;
+		}
+	}
+	&__search {
+		@include flex;
+		align-items: center;
+		@media (max-width: 768px){
+			&{
+				display: none;
+			}
+		}
+	}
+	&__input {
+		width: 435px;
+		border: 1px solid #e1e1e1;
+		height: 33px;
+		padding: 5px;
+		box-sizing: border-box;
+		border-right: 0;
+	}
+	&__btn {
+		border: 1px solid #e1e1e1;
+		border-left: 0;
+		padding: 5px;
+		padding-bottom: 4px;
+	}
+	&__right {
+		@include flex;
+		align-items: center;
+	}
+	&__img__right {
+		
+	}
+	&__price {
+		font-size: 33px;
+		color: #a1a1a1;
+		padding-left: 16px;
+	}
+}
+/*/header*/
+
+/*menu*/
+
+.menu {
+	background-color: #4ccfc1;
+	color: white;
+	z-index: 1000;
+	width: 100%;
+	top: 0;
+	left: 0;
+	box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+	&__container {
+		padding: 16px 0;
+		@include flex;
+		justify-content: flex-start;
+		align-items: center;
+		@media (max-width: 768px){
+			justify-content: space-between;
+			position: relative;
+		}
+	}
+	.burger{
+		display: none;
+		font-size: 35px;
+		margin-left: 25px;
+		cursor: pointer;
+		@media (max-width: 929px){
+			display: block;
+		}
+	}
+	.burger__nav{
+		padding-left: 25px;
+		display: none;
+
+	}
+	.burger__item{
+		padding: 5px 0;
+		a{
+			color: white;
+			font-size: 31px;
+			transition: opacity 0.3s ease;
+			text-transform: uppercase;
+			display: block;
+			&:hover{
+				opacity: 0.6;
+			}
+		}
+	}
+	&__nav {
+		@include flex;
+		align-items: center;
+		justify-content: space-between;
+		width: 100%;
+		@media (max-width: 929px){
+			display: none;
+		}
+	}
+	&__item {
+		@media (max-width: 768px){
+			padding: 10px;
+		}
+		a{
+			color: white;
+			padding: 16px 10px 0 0;
+			font-size: 21px;
+			transition: opacity 0.3s ease;
+			text-transform: uppercase;
+			&:hover{
+				opacity: 0.6;
+			}
+		}
+		&:before{
+			content: '';
+			width: 2px;
+			height: 18px;
+			background-color: white;
+			display: inline-block;
+			margin-right: 20px;
+			position: relative;
+			transform: translateY(2px);
+		}
+		&:first-child{
+			padding-left: 20px;
+			&:before{
+				display: none;
+				content: '';
+			}
+		}
+	}
+	&__search {
+		align-items: center;
+		display: none;
+		@media (max-width: 768px){
+			&{
+				@include flex;
+			}
+		}
+	}
+	&__input {
+		width: 73%;
+		border: 1px solid #e1e1e1;
+		height: 33px;
+		padding: 5px;
+		box-sizing: border-box;
+		border-right: 0;
+		background-color: transparent;
+		color: white;
+	}
+	&__btn {
+		border: 1px solid #e1e1e1;
+		border-left: 0;
+		padding: 5px;
+		padding-bottom: 4px;
+	}
+}
+
+/*/menu*/
+
+/*main*/
+
+.main {
+	color: white;
+	padding: 65px 0 50px 0;	
+	@media (max-width: 580px){
+		padding: 30px 0 50px 0;
+	}
+	&__container {
+		@include flex;
+		justify-content: center;
+		min-width: 0;
+		max-width: 784px;
+		margin: 0 auto;
+		position: relative;
+	}
+	&__item {
+		@include flex;
+		width: 784px;
+		justify-content: space-between;
+		@media (max-width: 580px){
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+		}
+	}
+	&__img {
+		height: 330px;
+		width: 282px;
+		background-size: contain;
+		pointer-events: none;
+		@media (max-width: 580px){
+			width: 282px - 70px;
+			height: 330px - 70px;
+		}
+	}
+	&__text {
+		max-width: 402px;
+		margin-top: 14px;
+		margin-left: 15px;
+		@media (max-width: 580px){
+			text-align: center;
+		}
+	}
+	&__offer {
+		font-size: 61px;
+		max-width: 310px;
+		margin-bottom: 15px;
+		pointer-events: none;
+		@media (max-width: 580px){
+			margin: 0 auto;
+			font-size: 40px;
+		}
+	}
+	&__desc {
+		font-size: 17px;
+		font-family: $opensans;
+		line-height: 28px;
+		pointer-events: none;
+		margin-bottom: 22px;
+		@media (max-width: 580px){
+			line-height: 20px;
+			font-size: 16px;
+		}
+	}
+	&__btn {
+		color: white;
+		display: inline-block;
+		border-radius: 5px;
+		border: 3px solid white;
+		font-size: 27px;
+		padding: 8px 24px;
+		transition: all 0.3s ease;
+		&:visited{
+			color: white;
+		}
+		&:hover{
+			background-color: white;
+			color: #38c8b5;
+		}
+	}
+	/* Слайдер */
+	.slick-slider{}
+	/* Слайдер запущен */
+	.slick-slider.slick-initialized{}
+	/* Слайдер с точками */
+	.slick-slider.slick-dotted{}
+	/* Ограничивающая оболочка */
+	.slick-list {
+		overflow: hidden;
+	}
+	/* Лента слайдов */
+	.slick-track{
+		@include flex;
+	}
+	/* Слайд */
+	.slick-slide{}
+	/* Слайд активный (показывается) */
+	.slick-slide.slick-active{}
+	/* Слайд основной */
+	.slick-slide.slick-current{}
+	/* Слайд по центру */
+	.slick-slide.slick-center{}
+	.slick-slide.slick-last{
+	}
+	/* Клонированный слайд */
+	.slick-slide.slick-cloned{
+		border-right: 0;
+	}
+	/* Стрелка */
+	.slick-arrow{
+	}
+	/* Стрелка влево */
+	.slick-arrow.slick-prev{
+	}
+	/* Стрелка вправо */
+	.slick-arrow.slick-next{
+	}
+	/* Стрелка не активная */
+	.slick-arrow.slick-disabled{}
+	/* Точки (булиты) */
+	.slick-dots{
+		@include flex;
+		justify-content: center;
+		position: absolute;	
+		top: 336px;
+	}
+	.slick-dots li{}
+	/* Активная точка */
+	.slick-dots li.slick-active{
+		opacity: 0.51;
+	}
+	/* Элемент точки */
+	.slick-dots li button{
+		font-size: 0;
+		background-color: white;
+		width: 9px;
+		height: 9px;
+		margin: 0 5px;
+		border-radius: 100%;
+	}
+
+}
+
+/*/main*/
+
+/*cards*/
+
+.cards {
+	background-color: white;
+	box-shadow: 0 2px 3px rgba(0,0,0,0.13);
+	&__container {
+		@include flex;
+		justify-content: center;
+		position: relative;
+	}
+	&__item {
+		@include flex;
+		border-right: 1px solid rgba(0,0,0,0.1);
+		padding: 28px 67px 22px 24px;
+		align-items: center;
+		&:last-child{
+			border: 0;
+		}
+		@media (max-width: 580px){
+			&{
+				padding: 28px 17px 22px 24px;
+			}
+		}
+	}
+	&__img {
+		width: 189px;
+		height: 140px;
+		background-size: contain;
+		@media (max-width: 580px){
+			&{
+				width: 189px + 20px;
+				height: 140px + 20px;
+			}
+		}
+	}
+	&__text {}
+	&__offer {
+		font-size: 27px;
+		color: #afafaf;
+		margin-bottom: 18px;
+	}
+	&__btn {
+		@include btn;
+	}
+	/* Слайдер */
+	.slick-slider{
+		@include flex;
+	}
+	/* Слайдер запущен */
+	.slick-slider.slick-initialized{}
+	/* Слайдер с точками */
+	.slick-slider.slick-dotted{}
+	/* Ограничивающая оболочка */
+	.slick-list {
+		overflow: hidden;
+
+	}
+	/* Лента слайдов */
+	.slick-track{
+		@include flex;
+	}
+	/* Слайд */
+	.slick-slide{}
+	/* Слайд активный (показывается) */
+	.slick-slide.slick-active{}
+	/* Слайд основной */
+	.slick-slide.slick-current{}
+	/* Слайд по центру */
+	.slick-slide.slick-center{}
+	/* Клонированный слайд */
+	.slick-slide.slick-cloned{}
+	/* Стрелка */
+	.slick-arrow{
+		font-size: 0;
+		height: 87px;
+        width: 29px;
+        background-color: white;
+        align-items: center;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+	}
+	/* Стрелка влево */
+	.slick-arrow.slick-prev{
+        background-image: url('../img/slide-left.png');
+        left: -95px;
+	}
+	/* Стрелка вправо */
+	.slick-arrow.slick-next{
+        background-image: url('../img/slide-right.png');
+        right: -95px;
+	}
+	/* Стрелка не активная */
+	.slick-arrow.slick-disabled{}
+	/* Точки (булиты) */
+	.slick-dots{}
+	.slick-dots li{}
+	/* Активная точка */
+	.slick-dots li.slick-active{}
+	/* Элемент точки */
+	.slick-dots li button{}
+}
+
+/*/cards*/
+
+/*featured*/
+.featured {
+	color: white;
+	padding: 18px 0;
+	&__text {
+		font-size: 31px;
+	}
+}
+/*/featured*/
+
+/*prods*/
+
+.prods {
+	background-color: white;
+	&__container {
+		@include flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		align-items: center;
+		padding: 46px 0 69px 0;
+		@media (max-width: 768px){
+			max-width: 590px;
+		    margin: 0 auto;
+		}
+		@media (max-width: 534px){
+			flex-direction: column;
+		}
+	}
+	&__item {
+		width: 254px;
+		border: 1px solid #e4e4e4;
+		border-bottom: 5px solid #3cc395;
+		margin-bottom: 44px;
+		text-align: center;
+		box-shadow: 0 0 3px rgba(0,0,0,0.16);
+	}
+	&__img {
+		height: 148px;
+		background-size: contain;
+	}
+	&__offer {
+		margin: 12px 0;
+		font-size: 27px;
+		color: #afafaf;
+	}
+	&__money {
+		color: #afafaf;
+		@include flex;
+		justify-content: center;
+		align-items: center;
+		margin-bottom: 30px;
+	}
+	&__price {
+		font-size: 27px;
+		padding-right: 7.5px;
+	}
+	&__btn {
+		@include btn;
+		padding-left: 7.5px;
+	}
+}
+
+/*/prods*/
+
+/*cats*/
+
+.cats {
+	background-color: #3cc3b5;
+	color: white;
+	&__container {
+		@include flex;
+		padding: 40px 0;
+		justify-content: space-between;
+		@media (max-width: 612px){
+			flex-direction: column;
+		}
+	}
+	&__col {
+		width: 167px;
+	}
+	&__offer {
+		font-size: 27px;
+		margin-bottom: 22px;
+		pointer-events: none;
+		@media (max-width: 612px){
+			cursor: pointer;
+			display: block;
+			font-size: 30px;
+			pointer-events: auto;
+		}
+	}
+	&__nav {
+		margin-left: 3px;
+		@media (max-width: 612px){
+			display: none;
+		}
+		&__item {
+			margin-bottom: 14px;
+			a{
+				color: white;
+				font-family: $opensans;
+				font-size: 15px;
+				transition: opacity 0.2s ease;
+				&:hover{
+					opacity: 0.5;
+				}
+			}
+		}
+	}
+}
+
+/*/cats*/
+
+/*footer*/
+
+.footer {
+	color: white;
+	background-color: #2da89b;
+	font-family: $opensans;
+	padding: 13px 0;
+	&__text {
+		text-align: center;
+		font-size: 15px;
+	}
+}
+
+/*/footer*/
