@@ -1,192 +1,291 @@
 <!DOCTYPE html>
-<html class="no-js" lang="en">
+<html lang="en">
 <head>
-
-   <!--- Basic Page Needs
-   ================================================== -->
-   <meta charset="utf-8">
-	<title>7r1pleB portfolio</title>
-	<meta name="description" content="">
-	<meta name="author" content="">
-
-   <!-- Mobile Specific Metas
-   ================================================== -->
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-	<!-- CSS
-    ================================================== -->
-   <link rel="stylesheet" href="css/default.css">
-	<link rel="stylesheet" href="css/layout.css">
-   <link rel="stylesheet" href="css/media-queries.css">
-   <link rel="stylesheet" href="css/magnific-popup.css">
-
-   <!-- Script
-   ================================================== -->
-	<script src="js/modernizr.js"></script>
-   <script src="https://kit.fontawesome.com/2e9fe2d343.js" crossorigin="anonymous"></script>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Alya Bot</title>
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap" rel="stylesheet">
 </head>
+<script type="text/javascript">
+	function inputClick() {
+		var token = document.getElementById('token_act').value;
+		console.log(token);
+	}
+ </script>
+<style type="text/css">
+	* {
+		margin: 0px;
+		padding: 0px;
+		overflow-y: hidden;
+		overflow-x: hidden;
+		font-family: Comfortaa;
+	}
+
+	a {
+		text-decoration: none;
+	}
+
+	.container {
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		grid-template-rows: 1.2fr 4fr 0.4fr;
+		display: grid;
+	}
+
+	.header {
+		display: grid;
+		grid-template-rows: 4fr 3fr;
+	}
+
+	.head {
+		background: linear-gradient(10deg, #8155ff, #977ef2, #7b84db, #85abe3);
+		display: flex;
+		align-items: center;
+	}
+
+	.buttoncon {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+		background: linear-gradient(45deg, #F78EEF, #F7B4EF, #F7BFB1, #FFC17B, #FFC17B, #F7BFB1, #F7B4EF, #F78EEF, #F78EEF, #F7B4EF, #F7BFB1, #FFC17B, #FFC17B, #F7BFB1, #F7B4EF, #F78EEF);
+	}
+
+	.btn {
+		display: flex;
+		align-items: center;
+	}
+
+	.btn:hover {
+		cursor: pointer;
+		background: linear-gradient(45deg, #FFC17B, #F7BFB1, #F7B4EF, #F78EEF);
+	}
+
+	.btn2:hover {
+		background: linear-gradient(45deg, #F78EEF, #F7B4EF, #F7BFB1, #FFC17B);
+	}
+
+	.footer {
+		display: flex;
+		align-items: center;
+		background-color: #D4DBF5;
+	}
+
+	.footertxt {
+		margin: 0 auto;
+	}
+
+	.body {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+	}
+
+	.links {
+		display: grid;
+		grid-template-rows: 1fr 1fr;
+		align-items: center;
+	}
+
+	.linkcon {
+		display: grid;
+		grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+		align-items: center;
+	}
+
+	.alink:hover {
+		text-decoration: underline;
+	}
+
+	.anketacon {
+		display: flex;
+		align-items: center;
+	} 
+
+	.anketa {
+		height: 70%;
+		margin: 0 auto;
+		background: linear-gradient(45deg, #8155ff, #977ef2, #7b84db, #85abe3);
+		width: 80%;
+		border-radius: 7vw 0.4vw 7vw 0.4vw;
+		display: grid;
+		align-items: center;
+		grid-template-rows: 33% 12% 15% 11% 9% 20%;
+	}
+
+	div.photo {
+		width: 100%;
+		display: flex;
+		align-items: center;
+	}
+
+	img.photo {
+	  border-radius: 50%;
+	  border: 1px solid #D4DBF5;
+	  margin: 0 auto;
+	}
+
+	.username {
+		display: flex;
+		align-items: center;
+
+	}
+
+	.token {
+		display: flex;
+		align-items: center;
+	}
+
+	.token {
+		display: flex;
+		align-items: center;
+	}
+
+	.tokenarea {
+		display: flex;
+		align-items: center;
+	}
+
+	.area {
+		margin: 0 auto;
+		width: 80%;
+		border: 2px solid #434343;
+		border-radius: 40px;
+		height: 90%;
+	}
+
+	input[type="text"] {
+		background: linear-gradient(45deg, #F78EEF, #F7B4EF, #F7BFB1, #FFC17B) !important;
+		border: 0px solid #019AFA;
+		outline: none;
+		width: 100%;
+		height: 100%;
+		text-align: center;
+		border-radius: 30px;
+		margin: 0 auto;
+		font-size: 1.1vw;
+	}
+
+	.ip {
+		display: flex;
+		align-items: center;
+	}
+
+	.tokenbtn {
+		width: 70%;
+		background: linear-gradient(45deg, #F78EEF, #F7B4EF, #F7BFB1, #FFC17B);
+		border-radius: 30px;
+		margin: 0 auto;
+		font-size: 1.3vw;
+		height: 60%;
+		display: flex;
+		align-items: center;
+		transition: .2s;
+	}
+
+	.tokenbtn:hover {
+		cursor: pointer;
+		background: linear-gradient(45deg, #FF33EE, #F77DE9, #F79982, #FFAC4E);
+		box-shadow: 0 0px 15px rgba(0,0,0,0.9);
+	}
+
+	.confalink {
+		display: grid;
+		align-items: center;
+		grid-template-rows: 1fr 1fr;
+		font-size: 1.4vw;
+
+	}
+
+	.confacon {
+		margin: 0 auto;
+	}
+
+	.conf:hover {
+		text-decoration: underline;
+	}
+
+	@media handheld {
+		.container {
+			display: none;
+		}
+	}
+
+</style>
 <body>
+	<div class="container">
+		<div class="header">
+			<div class="head">
+				<p style="font-size: 3.5vw; color: #F0EE84;margin-left: 10%">Alya Bot</p>
+			</div>
+			<div class="buttoncon">
+				<div class="btn"><div style="margin: 0 auto"><p style="font-size: 2.5vw; color: #691563;">Команды</p></div></div>
+				<div class="btn btn2"><div style="margin: 0 auto"><p style="font-size: 2.5vw; color: #691563;">AqvaPi</p></div></div>
+				<div class="btn"><div style="margin: 0 auto"><p style="font-size: 2.5vw; color: #691563;">Помощь</p></div></div>
+				<div class="btn btn2"><div style="margin: 0 auto"><p style="font-size: 2.5vw; color: #691563;">Выход</p></div></div>
+			</div>
+		</div>
+		<div class="body" style="background-color: #D4DBF5">
+			<div class="links">
 
-   <!-- Header
-   ================================================== -->
-   <header id="home">
+				<div class="linkcon">
+					<p></p>
+					<p></p>
+					<p style="margin: 0 auto; font-size: 2vw">Агенты поддержки:</p>
+					<a target="_blank" class="alink" style="margin: 0 auto; font-size: 1.3vw" href="https://vk.com/id173185469">Анастасия Колочкова</a>
+					<a target="_blank" class="alink" style="margin: 0 auto; font-size: 1.3vw" href="https://vk.com/id281418646">Виктория Фадькина</a>
+					<a target="_blank" class="alink" style="margin: 0 auto; font-size: 1.3vw" href="https://vk.com/id347671231">Александр Калашников</a>
+					<a target="_blank" class="alink" style="margin: 0 auto; font-size: 1.3vw" href="https://vk.com/id508817322">Никита Ангелов</a>
+					<p></p>
+					<p></p>
+				</div>
+				<div class="linkcon">
+					<p></p>
+					<p></p>
+					<p></p>
+					<p style="margin: 0 auto;font-size: 2vw">Разработчики:</p>
+					<a target="_blank" class="alink" style="margin: 0 auto; font-size: 1.3vw" href="https://vk.com/id396886945">Роберт</a>
+					<p></p>
+					<p></p>
+					<p></p>
+				</div>
 
-      <nav id="nav-wrap">
-
-         <a class="mobile-btn" href="#nav-wrap" title="Show navigation">Show navigation</a>
-	      <a class="mobile-btn" href="#" title="Hide navigation">Hide navigation</a>
-
-         <ul id="nav" class="nav">
-            <li class="current"><a class="smoothscroll" href="#home">Home</a></li>
-            <li id="mbtn"><a class="smoothscroll" href="#about">About</a></li>
-            <li id="mbtn"><a class="smoothscroll" href="#portfolio">Works</a></li>
-         </ul> <!-- end #nav -->
-
-      </nav> <!-- end #nav-wrap -->
-
-      <div class="row banner">
-         <div class="banner-text">
-            <h1 class="responsive-headline">I'm Egor Markelov.</h1>
-            <h3>I'm a Katowice based <span>graphic designer</span>, <span>illustrator</span> and <span>webdesigner</span> creating awesome and
-            effective visual identities for companies of all sizes around the globe. Let's <a class="smoothscroll" href="#about">start scrolling</a>
-            and learn more <a class="smoothscroll" href="#about">about me</a>.</h3>
-            <hr />
-            <ul class="social">
-               <li>
-                  <a href="https://t.me/tr1pleB">
-                     <i class="fa fa-telegram"></i>
-                  </a>
-               </li>
-               <li>
-                  <a href="https://vk.com/po4ti.letov">
-                     <i class="fa fa-vk">
-                     
-                     </i>
-                  </a>
-               </li>
-            </ul>
-         </div>
-      </div>
-
-      <p class="scrolldown">
-         <a class="smoothscroll" href="#about"><i class="icon-down-circle"></i></a>
-      </p>
-
-   </header> <!-- Header End -->
-
-
-   <!-- About Section
-   ================================================== -->
-   <section id="about">
-
-      <div class="row">
-
-         <div class="three columns">
-
-            <img class="profile-pic"  src="images/profilepic.jpg" alt="" />
-
-         </div>
-
-         <div class="nine columns main-col">
-
-            <h2>About Me</h2>
-
-            <p>
-            	I have been working in web development for more than 5 years. I also have a team of designers, photoshop artists, developers in many programming languages. Our company can provide you with services in the areas of mobile development, web design, layout, and Python development. As well as works of any complexity in photoshop.
-            </p>
-
-            <div class="row">
-
-               <div class="columns contact-details">
-
-                  <h2>Contact Details</h2>
-                  <p class="address">
-						   <span>Egor Markelov</span><br>
-                     <span>shimapasta6@gmail.com</span>
-					   </p>
-
-               </div>
-
-            </div> <!-- end row -->
-
-         </div> <!-- end .main-col -->
-
-      </div>
-
-   </section> <!-- About Section End-->
-
-
-   <!-- Portfolio Section
-   ================================================== -->
-   <section id="portfolio">
-
-      <div class="tablecon">
-         <p class="tbl">Check Out Some of My Works.</p>
-         <table class="con">
-               <tr>
-                  <th class="site top left audiofree">
-                     <a href="sites/audiofree/index.html" class="project"><img src="sites/audiofree/img/main__img.png" width="75%"></a>
-                  </th>
-                  <th class="site top middle bycircle">
-                     <a href="sites/bycircle/index.html" class="project"><img src="sites/bycircle/img/Logo.png"></a>
-                  </th>
-                  <th class="site top right charger">
-                     <a href="sites/charger/index.html" class="project"><img src="sites/charger/img/watch-logo.png"></a>
-                  </th>
-               </tr>
-         </table>
-         <table class="con">
-               <tr>
-                  <th class="site bottom left foresttravel">
-                     <a href="sites/foresttravel/index.html" class="project"><img src="sites/foresttravel/img/logo.png"></a>
-                  </th>
-                  <th class="site bottom middle premium">
-                     <a href="sites/premium/index.html" class="project aditii"><img src="sites/premium/img/logo.png"></a>
-		     <a href="sites/test/index.html" class="project aditii"><img src="sites/premium/img/logo.png"></a>
-                  </th>
-               </tr>
-         </table>
-      </div>
-   </section>
-
-   <!-- footer
-   ================================================== -->
-   <footer>
-
-      <div class="row">
-
-         <div class="twelve columns">
-
-            <ul class="social-links">
-               <li><a href="#home"><i class="fa fa-telegram"></i></a></li>
-               <li><a href="#home"><i class="fa fa-vk"></i></a></li>
-            </ul>
-
-            <ul class="copyright">
-               <li>&copy; Copyright 2018-2022 7r1pleB</li>
-                  
-            </ul>
-
-         </div>
-
-         <div id="go-top"><a class="smoothscroll" title="Back to Top" href="#home"><i class="icon-up-open"></i></a></div>
-
-      </div>
-
-   </footer> <!-- Footer End-->
-
-   <!-- Java Script
-   ================================================== -->
-   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-   <script>window.jQuery || document.write('<script src="js/jquery-1.10.2.min.js"><\/script>')</script>
-   <script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>
-
-   <script src="js/jquery.flexslider.js"></script>
-   <script src="js/waypoints.js"></script>
-   <script src="js/jquery.fittext.js"></script>
-   <script src="js/magnific-popup.js"></script>
-   <script src="js/init.js"></script>
-
+			</div>
+			<div class="anketacon">
+				<div class="anketa">
+					<div class="photo" style="height: 100%;">
+						<img class="photo" src="" style="width: 40%;height: 85%"  />
+					</div>
+					<div class="username" style="height: 100%;"><p style="margin: 0 auto; font-size: 2vw">{{ user_name }}</p></div>
+					<div class="token" style="height: 100%;"><p style="margin: 0 auto; font-size: 2vw">Токен:</p></div>
+					<div class="tokenarea" style="height: 100%">
+						<div class="area">
+							<input id = "token_act" type="text" name="inputtoken" placeholder="Вставьте токен" value="">
+							</input type="text" name="">
+						</div>
+					</div>
+					<div class="ip">
+						<p style="margin: 0 auto;font-size: 1.7vw">{{ ip }}</p>
+					</div>
+					<div class="tokenbtn"  id="token" onclick="inputClick()">
+						<p style="margin: 0 auto">Авторизоваться</p>
+					</div>
+				</div>
+			</div>
+			<div class="confalink">
+				<div class="confacon">
+					<a class="conf" target="_blank" href="https://vk.com/abot_lp">Официальная группа Али</a>
+				</div>
+				<div class="confacon">
+					<a class="conf" target="_blank"  href="https://vk.me/join/AJQ1dy1PUBreMe4t3kCAg_D/">Беседа технической поддержки</a>
+				</div>
+			</div>
+		</div>
+		<div class="footer">
+			<div class="footertxt">
+				<p style="color: #898989; font-size: 1vw"> Copyright &#169; 2020-2021 Alya Bot</p>
+				<p style="color: #898989; font-size: 1vw"> Все права защищены</p>
+			</div>
+		</div>
+	</div>
 </body>
-
 </html>
